@@ -1,0 +1,199 @@
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border: 0;
+  padding: 0;
+
+  background-color: #333333;
+  color: #ffffff;
+
+  font-size: 16pt;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+.App__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  width: 100%;
+  border-bottom: 1px solid #666666;
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.App__game {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 600px;
+  height: 100%;
+}
+
+.Keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 10px;
+}
+
+.Keyboard__row {
+  display: flex;
+  flex-direction: row;
+
+  margin-bottom: 6px;
+}
+
+.Keyboard__key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #999999;
+
+  min-width: 40px;
+  min-height: 55px;
+
+  margin-right: 6px;
+  border-radius: 4px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.Keyboard__key--wide {
+  @extend .Keyboard__key;
+
+  min-width: 70px;
+  min-height: 55px;
+  font-size: 0.75rem;
+}
+
+.Keyboard__key--not-found {
+  @extend .Keyboard__key;
+
+  background-color: #666666;
+}
+
+.Keyboard__key--correct {
+  @extend .Keyboard__key;
+
+  background-color: green;
+}
+
+.Keyboard__key--wrong-location {
+  @extend .Keyboard__key;
+
+  background-color: goldenrod;
+}
+
+.SchwordleGrid {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 20px;
+}
+
+.SchwordleGrid__row {
+  display: flex;
+  flex-direction: row;
+
+  margin-bottom: 10px;
+}
+
+.SchwordleLetter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 60px;
+  height: 60px;
+
+  border: 1px solid #666666;
+
+  margin-right: 10px;
+
+  font-weight: 700;
+  font-size: 1.75rem;
+}
+
+.SchwordleLetter--not-found {
+  @extend .SchwordleLetter;
+
+  border: 0px;
+  background-color: #666666;
+}
+
+.SchwordleLetter--correct {
+  @extend .SchwordleLetter;
+
+  border: 0px;
+  background-color: green;
+}
+
+.SchwordleLetter--wrong-location {
+  @extend .SchwordleLetter;
+
+  border: 0px;
+  background-color: goldenrod;
+}
+
+.SchwordleLetter--guess {
+  @extend .SchwordleLetter;
+
+  border: 1px solid #cccccc;
+}
+
+.GameStateIndicator {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  width: 100%;
+  background-color: #999999;
+
+  margin-top: 20px;
+  padding: 10px 20px 10px 20px;
+
+  border-radius: 4px;
+
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.GameStateIndicator--won {
+  @extend .GameStateIndicator;
+
+  background-color: green;
+}
+
+.GameStateIndicator--lost {
+  @extend .GameStateIndicator;
+
+  background-color: red;
+}
